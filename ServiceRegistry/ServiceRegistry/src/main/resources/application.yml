@@ -1,0 +1,15 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+
+# to not self register this service
+#  This property tells that
+#   the given configuration is for a client application, and it specifies that the client should not register itself with Eureka (likely because it's not a service) and should not fetch the registry information (perhaps because it doesn't need to communicate with other services through Eureka). These settings are typically used when you have a non-service application that interacts with services registered with Eureka but doesn't need to be registered itself or fetch the registry.
+
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+

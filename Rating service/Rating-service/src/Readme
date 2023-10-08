@@ -1,0 +1,7 @@
+To start mongod  run foll command on CMD
+
+
+mongod
+
+
+then try to connect with compass, it will get connected

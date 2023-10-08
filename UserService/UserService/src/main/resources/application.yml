@@ -1,0 +1,36 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/microservices
+    username: root
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  application:
+    name: USER-SERVICE
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone : http://localhost:8761/eureka
+
+
+#this configuration is for a service instance that uses Eureka for service registration and discovery. It prefers to use IP addresses for registration and is configured to fetch the registry information from a Eureka server running on http://localhost:8761/eureka. This is a common configuration in microservices environments where Eureka is used for service registration and discovery.
+
+
+
+
+
+
