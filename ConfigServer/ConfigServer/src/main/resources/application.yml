@@ -1,0 +1,17 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: CONFIG-SERVER
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Dhruvilshah007/Hotel-Reviews-Config
+          clone-on-start: true
+
+
+# We will specify all configurations of all microserver in one github repo,ConfigServer Will fetch it from there and other microservices will use this
+# clone-on-start->Flag to indicate that the repository should be cloned on startup (not on demand). Generally leads to slower startup but faster first query

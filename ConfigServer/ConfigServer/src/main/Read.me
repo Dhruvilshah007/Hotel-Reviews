@@ -1,0 +1,23 @@
+http://dhruvilshah:8085/application/default
+
+http://dhruvilshah:8085/application/dev
+
+We can access and see there is nothing as output as there was nom configuration present in application.yml file
+
+o/p-{"name":"application","profiles":["default"],"label":null,"version":"5f2d49e35f81b2f436f298a883e7351f261db9b0","state":null,"propertySources":[]}
+
+
+after adding config in application.yml output at http://dhruvilshah:8085/application/default
+{"name":"application","profiles":["default"],"label":null,"version":"7fcce205d85c6300868de72c320733c5b1e53731","state":null,"propertySources":[{"name":"https://github.com/Dhruvilshah007/Hotel-Reviews-Config/application.yml","source":{"eureka.instance.prefer-ip-address":true,"eureka.client.fetch-registry":true,"eureka.client.register-with-eureka":true,"eureka.client.service-url.defaultZone":"http://localhost:8761/eureka"}}]}
+
+Lots of Configuration gets repeated in yml files so we are making configserver
+
+
+
+http://dhruvilshah:8085/application/dev
+
+{"name":"application","profiles":["dev"],"label":null,"version":"b8669c0e771af7cc426871d711fd2f39c2a8ce7c","state":null,"propertySources":[{"name":"https://github.com/Dhruvilshah007/Hotel-Reviews-Config/application-dev.yml","source":{"spring.application.name":"Config-Default","eureka.instance.prefer-ip-address":true,"eureka.client.fetch-registry":true,"eureka.client.register-with-eureka":true,"eureka.client.service-url.defaultZone":"http://localhost:8761/eureka"}},{"name":"https://github.com/Dhruvilshah007/Hotel-Reviews-Config/application.yml","source":{"spring.application.name":"Config-Default","eureka.instance.prefer-ip-address":true,"eureka.client.fetch-registry":true,"eureka.client.register-with-eureka":true,"eureka.client.service-url.defaultZone":"http://localhost:8761/eureka"}}]}
+
+http://dhruvilshah:8085/application/prod
+
+{"name":"application","profiles":["prod"],"label":null,"version":"b8669c0e771af7cc426871d711fd2f39c2a8ce7c","state":null,"propertySources":[{"name":"https://github.com/Dhruvilshah007/Hotel-Reviews-Config/application-prod.yml","source":{"spring.application.name":"Config-Prod","eureka.instance.prefer-ip-address":true,"eureka.client.fetch-registry":true,"eureka.client.register-with-eureka":true,"eureka.client.service-url.defaultZone":"http://localhost:8761/eureka"}},{"name":"https://github.com/Dhruvilshah007/Hotel-Reviews-Config/application.yml","source":{"spring.application.name":"Config-Default","eureka.instance.prefer-ip-address":true,"eureka.client.fetch-registry":true,"eureka.client.register-with-eureka":true,"eureka.client.service-url.defaultZone":"http://localhost:8761/eureka"}}]}
