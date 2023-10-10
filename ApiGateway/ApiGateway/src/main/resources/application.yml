@@ -22,6 +22,9 @@ spring:
           uri: lb://RATING-SERVICE
           predicates:
             - Path=/ratings/**
+  #  To import configuration
+  config:
+    import: optional:configserver:http://localhost:8085
 
 #We can use Service name at uri as we have service registry in place
 # lb://USER-SERVICE--> /users/**, if we do users/**it will come above

@@ -10,6 +10,10 @@ spring:
   application:
     name: RATING-SERVICE
 
+  #  To import configuration
+  config:
+    import: optional:configserver:http://localhost:8085
+
 
 
 eureka:

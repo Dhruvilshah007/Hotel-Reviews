@@ -13,4 +13,4 @@ public class ServiceRegistryApplication {
 	}
 
 }
-//@EnableEurekaServer- This will act as server and all Microservice will bee registered here
+//@EnableEurekaServer- This will act as server and all Microservice will be registered here

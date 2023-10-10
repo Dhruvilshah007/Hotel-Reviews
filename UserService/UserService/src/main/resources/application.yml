@@ -16,19 +16,44 @@ spring:
   application:
     name: USER-SERVICE
 
+#  To import configuration
+  config:
+    import: optional:configserver:http://localhost:8085
 
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone : http://localhost:8761/eureka
+
+# it will take by default the default one file
+# spring.config.import.optional.configserver=http://localhost:8085
+
+#  cloud:
+#    config:
+#      profile:
+#        - prod
+
+# Here directly with this it will use prod application file and name will also be changed
+#spring:
+#  config:
+#    import: configserver:http://localhost:8085
+#  profiles:
+#    active:
+#      - prod/dev
+
+
+
+
+
+
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone : http://localhost:8761/eureka
 
 
 #this configuration is for a service instance that uses Eureka for service registration and discovery. It prefers to use IP addresses for registration and is configured to fetch the registry information from a Eureka server running on http://localhost:8761/eureka. This is a common configuration in microservices environments where Eureka is used for service registration and discovery.
-
 
 
 

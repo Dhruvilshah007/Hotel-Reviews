@@ -32,6 +32,12 @@
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 
+<!-- We have added this so we can use Configuration from config server, which fetches details from github repo		-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+
 
 <!--		We have added this core extra because Maven was not able to  find openfeign-->
 		<dependency>
