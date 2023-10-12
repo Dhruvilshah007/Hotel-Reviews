@@ -39,7 +39,30 @@
 		</dependency>
 
 
-<!--		We have added this core extra because Maven was not able to  find openfeign-->
+<!--		Circuit breaker start-->
+<!--		To monitor health-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<!--We will able to send matrix continuously to actuator -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.github.resilience4j/resilience4j-spring-boot2 -->
+        <!--here we removed version, as it was causing issues in yml file configuration		-->
+		<dependency>
+			<groupId>io.github.resilience4j</groupId>
+			<artifactId>resilience4j-spring-boot2</artifactId>
+		</dependency>
+
+		<!--		Circuit breaker end-->
+
+
+		<!--		We have added this core extra because Maven was not able to  find openfeign-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-openfeign-core</artifactId>

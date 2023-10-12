@@ -1,0 +1,27 @@
+Exposed only health. So, can see health related info. ALso info about ratingHotelBreaker
+and also STATE details:
+
+Buffered calls: Success calls count
+Failed calls: Failure calls(When Fallback is called, i.e any service is down)
+
+
+CASE 1: CLOSED to OPEN
+So, after failure Rate>=5.Circuit State  becomes OPEN,
+
+
+CASE 2:  OPEN to HALF_OPEN
+Now when ist is in OPEN and after 6s it will become HALF_OPEN
+
+automaticTransitionFromOpenToHalfOpenEnabled: true
+waitDurationInOpenState: 6s
+
+
+CASE 3:  HALF_OPEN to OPEN
+->So, now When in HALF_OPEN state if more than 3 failures calls are there than again it will go back to OPEN
+permittedNumberOfCallsInHalfOpenState: 3
+
+
+
+
+CASE 3:  HALF_OPEN to CLOSED
+->So, now When service will get
