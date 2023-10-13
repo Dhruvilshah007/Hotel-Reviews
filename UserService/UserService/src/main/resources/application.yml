@@ -89,6 +89,16 @@ resilience4j:
         slidingWindowType: COUNT_BASED
 
 
+#Idealy waitDuration should be 2s
+  retry:
+    instances:
+      ratingHotelBreaker:
+        maxAttempts: 3
+        waitDuration: 5s
+
+
+
+
 
 
 
