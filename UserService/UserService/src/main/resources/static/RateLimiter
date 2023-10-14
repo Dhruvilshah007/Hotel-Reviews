@@ -1,0 +1,35 @@
+
+https://resilience4j.readme.io/docs/ratelimiter
+
+Rate limiter is done for security purpose and performance
+
+
+1)-security-> DOS attack(multiple requests)
+2)-performance->For eg our Backend server has 100 req/s capacity, and if client req 101req/s and than server will crash. So, in 1s 1 client can do 2 requests/Sec.
+
+->Also provides high availabity and scalability
+
+Ways
+Request/Second
+Request/Minute
+Request/Hr
+
+Create and configure a RateLimiter
+
+You can provide a custom global RateLimiterConfig. In order to create a custom global RateLimiterConfig, you can use the RateLimiterConfig builder. You can use the builder to configure the following properties.
+
+Config property	Default value	Description
+
+1->timeoutDuration	5 [s]	        The default wait time a thread waits for a permission
+2->limitRefreshPeriod	500 [ns]	The period of a limit refresh. After each period the rate limiter sets its permissions count back to the                                      limitForPeriod value
+3->limitForPeriod	50	              The number of permissions available during one limit refresh period
+
+
+It means in 500 nano seconds we are allowing 50 requests
+
+
+With jmeter we send request in bulk.Open jmeter batch file to run jmeter in lib, folder
+
+Here in jmeter you will see all http req success and in it you will only get proper data in 2 requests, while in rest all requests you will get dummy data
+
+

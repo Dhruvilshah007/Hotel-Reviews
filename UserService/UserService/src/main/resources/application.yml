@@ -88,13 +88,25 @@ resilience4j:
         slidingWindowSize: 10
         slidingWindowType: COUNT_BASED
 
-
+  #Configuration for RETRY
 #Idealy waitDuration should be 2s
   retry:
     instances:
       ratingHotelBreaker:
         maxAttempts: 3
         waitDuration: 5s
+
+#Configuration for RateLimiter
+# Here it means in 4 s it will allow only 2 requests
+
+  ratelimiter:
+    instances:
+      userRateLimiter:
+        limitRefreshPeriod: 4s
+        limitForPeriod: 2
+        timeoutDuration: 2s
+
+
 
 
 
