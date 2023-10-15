@@ -1,0 +1,20 @@
+JWT is stateless means it doesn't store anything on server
+
+
+OKTA will do Authentication and Authorization
+We will use Oauth and OpenId
+    -Oauth is used for Authorization and
+    -OpenId is used for Authentication
+OKTA will provide both
+
+Our all users will be stored in OKTA.
+
+
+First request will go to API gateway. we will write spring security in APIgateway and it will go to OKTA, where we will enter username and password, than OKTA will provide AccessToken(AT).
+
+Now we will send AT to client from API gateway.So, client will store AT in local storage.SO, next time when client will send Request client will also send AT.
+
+Than it will go to API gateway, again Authentication will be done at API gateway.Than it will go to other services with AT in header wit "Internal Scope"
+
+Than will go to service with internal scope and verification will be done service
+at service and will only give access if properly verified.
