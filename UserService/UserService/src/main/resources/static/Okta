@@ -18,3 +18,6 @@ Than it will go to API gateway, again Authentication will be done at API gateway
 
 Than will go to service with internal scope and verification will be done service
 at service and will only give access if properly verified.
+
+
+
