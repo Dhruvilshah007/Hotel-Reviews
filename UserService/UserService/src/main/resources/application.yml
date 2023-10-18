@@ -20,6 +20,29 @@ spring:
   config:
     import: optional:configserver:http://localhost:8085
 
+  #Spring security
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-29414653.okta.com/oauth2/default
+
+#      Client configuration
+      client:
+        registration:
+          my-internal-client:
+            provider: okta
+            authorizationGrantType: client_credentials
+            scope: internal
+            clientId: 0oacsld71mdiXJCrn5d7
+            clientSecret: cpm6_9WDqQjgm7h2ssQ4lyoIRJEK9ScO8aC-PzROcPNRwfEjnF58mhjuRff4HkzC
+        provider:
+          okta:
+            issuerUri: https://dev-29414653.okta.com/oauth2/default
+
+
+
 
 # it will take by default the default one file
 # spring.config.import.optional.configserver=http://localhost:8085
@@ -105,6 +128,17 @@ resilience4j:
         limitRefreshPeriod: 4s
         limitForPeriod: 2
         timeoutDuration: 2s
+
+
+# Okta configuration
+
+okta:
+  oauth2:
+    issuer: https://dev-29414653.okta.com/oauth2/default
+    audience: api://default
+
+
+
 
 
 
