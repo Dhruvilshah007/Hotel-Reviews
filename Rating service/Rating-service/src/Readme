@@ -5,3 +5,10 @@ mongod
 
 
 then try to connect with compass, it will get connected
+
+We are able to use @PreAuthorize("hasAuthority('Admin')") because we have mentioned @EnableGlobalMethodSecurity(prePostEnabled = true) in SecurityConfig.
+
+We have 3 scopes
+1-Normal
+2-ADMIN
+3-Internal (Between microservices)
