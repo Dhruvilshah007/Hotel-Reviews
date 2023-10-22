@@ -34,17 +34,17 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(user1);
     }
 
-    int retryCount=1;
+   // int retryCount=1;
     //single user get
 
-    @GetMapping("{userId}")
+    @GetMapping("/{userId}")
 //    @CircuitBreaker(name="ratingHotelBreaker",fallbackMethod = "ratingHotelFallback")
 //    @Retry(name ="ratingHotelService",fallbackMethod = "ratingHotelFallback")
     @RateLimiter(name = "userRateLimiter",fallbackMethod = "ratingHotelFallback")
     public ResponseEntity<User> getSingleUser(@PathVariable String userId){
         logger.info("UserController->getSingleUser starts");
-        logger.info("Retry Count:{}",retryCount);
-        retryCount++;
+        //logger.info("Retry Count:{}",retryCount);
+        //retryCount++;
         User user= userService.getUser(userId);
         return ResponseEntity.ok(user);
 
@@ -57,6 +57,8 @@ public class UserController {
     //For configuration we can do Java based as well as Resilence4j(yml based configuration)
     public ResponseEntity<User> ratingHotelFallback(String userId,Exception ex){
 //        logger.info("Fallback is executed because service is down->"+ex.getMessage());
+
+        ex.printStackTrace();
 
         User user=User.builder()
                 .email("dummy@gmail.com")
